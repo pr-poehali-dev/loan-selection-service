@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
+    --background: 222 45% 14%;
     --foreground: 210 40% 98%;
 
-    --card: 222 40% 9%;
+    --card: 222 38% 18%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 40% 9%;
+    --popover: 222 38% 18%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 248 100% 67%;
+    --primary: 248 100% 70%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 32% 17%;
+    --secondary: 217 32% 26%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 32% 15%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 217 32% 24%;
+    --muted-foreground: 215 20% 72%;
 
-    --accent: 280 100% 70%;
+    --accent: 280 100% 73%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 18%;
-    --input: 217 32% 18%;
-    --ring: 248 100% 67%;
+    --border: 217 32% 28%;
+    --input: 217 32% 28%;
+    --ring: 248 100% 70%;
 
     --radius: 1rem;
 
-    --grad-start: #4f46e5;
-    --grad-mid: #7c3aed;
-    --grad-end: #ec4899;
+    --grad-start: #6366f1;
+    --grad-mid: #8b5cf6;
+    --grad-end: #f472b6;
 
-    --sidebar-background: 222 47% 6%;
+    --sidebar-background: 222 45% 14%;
     --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 248 100% 67%;
+    --sidebar-primary: 248 100% 70%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 32% 17%;
+    --sidebar-accent: 217 32% 26%;
     --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 217 32% 18%;
-    --sidebar-ring: 248 100% 67%;
+    --sidebar-border: 217 32% 28%;
+    --sidebar-ring: 248 100% 70%;
   }
 }
 
@@ -104,20 +104,20 @@
   }
 
   .glass {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
   .glow {
     box-shadow:
-      0 0 40px rgba(124, 58, 237, 0.3),
-      0 0 80px rgba(79, 70, 229, 0.15);
+      0 0 40px rgba(139, 92, 246, 0.5),
+      0 0 80px rgba(99, 102, 241, 0.3);
   }
 
   .glow-sm {
-    box-shadow: 0 0 20px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.35);
   }
 
   .noise {
