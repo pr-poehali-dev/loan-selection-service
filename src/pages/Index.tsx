@@ -96,6 +96,7 @@ const faqs = [
 ];
 
 export default function Index() {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
   const [loanAmount, setLoanAmount] = useState(50000);
   const [period, setPeriod] = useState(6);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -103,6 +104,8 @@ export default function Index() {
   const [showPayment, setShowPayment] = useState(false);
   const [regData, setRegData] = useState({ name: '', phone: '', email: '', password: '' });
   const [regStep, setRegStep] = useState<'form' | 'pay'>('form');
+
+  const isLight = theme === 'light';
 
   const rate = 0.8;
   const monthlyPayment = Math.round((loanAmount * (rate / 100)) * period + loanAmount) / period;
@@ -120,7 +123,7 @@ export default function Index() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className={`min-h-screen bg-background text-foreground overflow-x-hidden ${theme}`}>
 
       {/* Навигация */}
       <nav className="fixed top-0 left-0 right-0 z-50 glass">
@@ -136,12 +139,21 @@ export default function Index() {
             <a href="#reviews" className="hover:text-white transition-colors">Отзывы</a>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
           </div>
-          <button
-            onClick={() => setShowRegister(true)}
-            className="grad-btn text-white text-sm font-semibold px-5 py-2.5 rounded-xl"
-          >
-            Попробовать
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setTheme(isLight ? 'dark' : 'light')}
+              className="glass rounded-xl w-10 h-10 flex items-center justify-center hover:bg-white/10 transition-colors"
+              title="Сменить тему"
+            >
+              <Icon name={isLight ? 'Moon' : 'Sun'} size={18} className={isLight ? 'text-indigo-600' : 'text-yellow-300'} />
+            </button>
+            <button
+              onClick={() => setShowRegister(true)}
+              className="grad-btn text-white text-sm font-semibold px-5 py-2.5 rounded-xl"
+            >
+              Попробовать
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -149,10 +161,10 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         {/* Фоновые шары */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-600/20 blur-[120px]" />
-          <div className="absolute top-[30%] right-[-10%] w-[400px] h-[400px] rounded-full bg-purple-600/25 blur-[100px]" />
-          <div className="absolute bottom-[-5%] left-[30%] w-[350px] h-[350px] rounded-full bg-pink-600/15 blur-[90px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(79,70,229,0.08)_0%,transparent_60%)]" />
+          <div className={`absolute top-[-10%] left-[-5%] w-[500px] h-[500px] rounded-full blur-[120px] ${isLight ? 'bg-indigo-400/15' : 'bg-indigo-600/20'}`} />
+          <div className={`absolute top-[30%] right-[-10%] w-[400px] h-[400px] rounded-full blur-[100px] ${isLight ? 'bg-purple-400/15' : 'bg-purple-600/25'}`} />
+          <div className={`absolute bottom-[-5%] left-[30%] w-[350px] h-[350px] rounded-full blur-[90px] ${isLight ? 'bg-pink-400/12' : 'bg-pink-600/15'}`} />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_120%,rgba(79,70,229,0.06)_0%,transparent_60%)]" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center py-20">
