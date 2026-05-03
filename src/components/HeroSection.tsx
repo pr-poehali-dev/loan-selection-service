@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const LOAN_MIN = 5000;
-const LOAN_MAX = 500000;
-const LOAN_STEP = 5000;
+const LOAN_MIN = 1000;
+const LOAN_MAX = 100000;
+const LOAN_STEP = 1000;
 const PERIOD_MIN = 3;
 const PERIOD_MAX = 24;
 
@@ -17,7 +17,7 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ isLight, onOpenRegister }: HeroSectionProps) {
-  const [loanAmount, setLoanAmount] = useState(50000);
+  const [loanAmount, setLoanAmount] = useState(10000);
   const [period, setPeriod] = useState(6);
 
   const rate = 0.8;
